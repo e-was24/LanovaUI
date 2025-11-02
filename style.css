@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap');
+
+nav {
+    background: rgba(7, 7, 68, 0.479);
+    height: 10dvh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: white;
+    font-family: "poppins", sans-serif;
+    position: fixed;
+    z-index: 1000;
+    top: 10px;
+    width: 90%;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+nav ul a:hover {
+    color: rgb(103, 103, 185);
+    background: white;
+    transition: 0.3s;
+}
+
+
+/* landing page */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container landing page dengan efek glassmorphism */
+
+.landing-page {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    padding: 4rem;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Bagian kiri */
+.left {
+    flex: 1;
+    padding-right: 3rem;
+}
+
+.left h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    color: #2c3e50;
+}
+
+.left h1 span {
+    color: #3498db;
+    position: relative;
+}
+
+.left h1 span::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    border-radius: 2px;
+}
+
+.left p {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+    color: #7f8c8d;
+}
+
+.left button {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: #fff;
+    border: none;
+    padding: 1.25rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 20px rgba(44, 62, 80, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.left button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.left button:hover::before {
+    left: 100%;
+}
+
+.left button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(44, 62, 80, 0.4);
+}
+
+/* Bagian kanan */
+.right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.right img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+    .landing-page {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .left {
+        padding-right: 0;
+        margin-bottom: 3rem;
+    }
+
+    .left h1 {
+        font-size: 2.8rem;
+    }
+
+    .left p {
+        font-size: 1.1rem;
+    }
+
+    .right img {
+        max-width: 90%;
+    }
+}
